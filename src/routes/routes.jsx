@@ -8,7 +8,7 @@ import { useEffect } from "react";
 
 export function MyRoutes() {
   const [userName,setUserName]=useState([])
-  
+
   useEffect(()=>{
    auth.onAuthStateChanged((user)=>{
      if(user){
@@ -20,9 +20,9 @@ export function MyRoutes() {
      return (
        <Router>
          <Routes>
-           <Route exact path="/" element={<Home />} />
-           <Route exact path="/login" element={<Login />} />
-           <Route exact path="/signup" element={<Signup />} />
+         <Route exact path="/" element={<Home name={userName}/>} />
+         <Route exact path="/login" element={<Login />} />
+         <Route exact path="/signup" element={<Signup />} />
          </Routes>
        </Router>
      );
