@@ -3,7 +3,7 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { auth } from "../../firebase";
 import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
-
+import { InputControl } from "../InputControl/InputControl";
 
 
 export function Signup() {
@@ -38,7 +38,13 @@ export function Signup() {
     <div className={styles.container}>
       <div className={styles.innerBox}>
         <h1 className={styles.heading}>Registro</h1>
-       
+        <InputControl
+          label="Nombre"
+          placeholder="Ingrese un nombre"
+          onChange={(event) =>
+            setvalues((prev) => ({ ...prev, name: event.target.value }))
+          }
+        />
      
      
       </div>
