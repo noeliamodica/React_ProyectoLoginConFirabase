@@ -45,6 +45,32 @@ export function Signup() {
             setvalues((prev) => ({ ...prev, name: event.target.value }))
           }
         />
+         <InputControl
+          label="Email"
+          placeholder="Ingrese un correo"
+          onChange={(event) =>
+            setvalues((prev) => ({ ...prev, email: event.target.value }))
+          }
+        />
+        <InputControl
+          label="Contraseña"
+          placeholder="Ingrese una contraseña"
+          onChange={(event) =>
+            setvalues((prev) => ({ ...prev, pass: event.target.value }))
+          }
+        />
+        <div className={styles.footer}>
+          <b className={styles.error}>{errorMsg}</b>
+          <button onClick={registro} disabled={submitButtonDisabled}>
+            Guardar
+          </button>
+          <p>
+            Si ya tienes una cuenta inicia sesión
+            <span>
+              <Link to="/login"> Login</Link>
+            </span>
+          </p>
+        </div>
      
      
       </div>
